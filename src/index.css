@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: #FAF7F2;
+    color: #1A1A1A;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-serif {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+
+  .font-display {
+    font-family: 'Cinzel', serif;
+  }
+}
+
+/* Custom Luxury Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FAF7F2;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #DBAB7D;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0C3B10;
+}
+
+/* Luxury gold border and decorative inlays */
+.gold-border-bottom {
+  position: relative;
+}
+
+.gold-border-bottom::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #DBAB7D, transparent);
+}
+
+.luxury-pattern-bg {
+  background-color: #0C3B10;
+  background-image: radial-gradient(rgba(219, 171, 125, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.luxury-light-pattern {
+  background-color: #FAF7F2;
+  background-image: radial-gradient(rgba(12, 59, 16, 0.04) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Smooth Image hover zoom container */
+.img-zoom-container {
+  overflow: hidden;
+}
+
+.img-zoom-container img {
+  transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.img-zoom-container:hover img {
+  transform: scale(1.06);
+}
+
+/* Shimmer animation for luxury accents */
+@keyframes goldShimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.gold-shimmer {
+  background: linear-gradient(90deg, #DBAB7D 0%, #FFF3E6 50%, #DBAB7D 100%);
+  background-size: 200% 100%;
+  animation: goldShimmer 3s infinite linear;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
